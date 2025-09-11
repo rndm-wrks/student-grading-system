@@ -96,7 +96,7 @@
 
 
 def main():
-    print("Ewan hahaha")
+    print("Ewan hahahda")
     ...
 
 if __name__ == "__main__":
