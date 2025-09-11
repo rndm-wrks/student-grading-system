@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # view student attendance (red = absent, green = present, orange = late, gray = no class)
 
 # add student (first name, last name, middle name, age, student id no., student email, regular or irregular)
@@ -99,4 +100,10 @@ def main():
     ...
 
 if __name__ == "__main__":
+=======
+def main():
+    ...
+
+if __name__ == "__main__":
+>>>>>>> 95da6573978b0ceed4b12d7007bdf6c456594ca1
     main()
