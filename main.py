@@ -2,6 +2,8 @@ from tkinter import *
 from tkinter import ttk
 from menu import Menubar as M
 
+
+# make column row for the attendance. make an json for students. it has so many index. like name course etc.
 # ------------------------------------------------------------------------------------------
 # | Prelim | Midterm | Final |
 # ------------------------------------------------------------------------------------------
@@ -12,6 +14,8 @@ from menu import Menubar as M
 # | Manicane, John Warren D.    |    /   |    /   |    -   |        |        |      |
 # |                             |  Save  |  Edit  |  Edit  |  Edit  |  Edit  | Edit |
 # |                             | Cancel |        |        |        |        |      |
+
+
 
 
 def make_subnb(parent):
