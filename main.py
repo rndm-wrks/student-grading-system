@@ -1,7 +1,7 @@
 from tkinter import *
+from tkinter import ttk
 from menu import Menubar as M
 
-# make this tomorrow
 # ------------------------------------------------------------------------------------------
 # | Prelim | Midterm | Final |
 # ------------------------------------------------------------------------------------------
@@ -14,7 +14,28 @@ from menu import Menubar as M
 # |                             | Cancel |        |        |        |        |      |
 
 
+def make_subnb(parent):
+    subnb = ttk.Notebook(parent)
+    att = Frame(subnb)
+    reci = Frame(subnb)
+    grp = Frame(subnb)
+    grd = Frame(subnb)
+    summ = Frame(subnb)
 
+    subnb.add(att, text="Attendance")
+    subnb.add(reci, text="Recitation")
+    subnb.add(grp, text="Groupings")
+    subnb.add(grd, text="Grades")
+    subnb.add(summ, text="Summary")
+    subnb.pack(expand=True, fill="both")
+
+    return {
+        "attendance": att,
+        "recitation": reci,
+        "groupings": grp,
+        "grades": grd,
+        "summary": summ
+        }
 
 def main():
     w = Tk()
@@ -26,6 +47,33 @@ def main():
     M.set_classmenu(m)
     M.set_editmenu(m)
     M.set_settingmenu(m)
+     
+    # MAKE NOTEBOOK FOR TERMS
+    nb = ttk.Notebook(w)
+    pre = Frame(nb)
+    mid = Frame(nb)
+    fin = Frame(nb)
+    overall = Frame(nb)
+    
+    nb.add(pre, text="Prelim")
+    nb.add(mid, text="Midterm")
+    nb.add(fin, text="Final")
+    nb.add(overall, text="Overall")
+    nb.pack(expand=True, fill="both")
+    
+    # MAKE SUBNOTEBOOK FOR TERMS
+    pre_frames = make_subnb(pre)
+    mid_frames = make_subnb(mid)
+    fin_frames = make_subnb(fin)
+    
+    students = Label(pre_frames["attendance"], text="Students")
+    
+    students.pack(side="left")
+    
+    
+    
+    
+    
     
     w.mainloop()
 
