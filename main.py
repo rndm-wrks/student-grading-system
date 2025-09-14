@@ -1,9 +1,10 @@
 from tkinter import *
 from tkinter import ttk
 from menu import Menubar as M
+import json
 
-
-# make column row for the attendance. make an json for students. it has so many index. like name course etc.
+# make column row for the attendance. make new nb or just new window when selecting section.
+# shows the current section in top.
 # ------------------------------------------------------------------------------------------
 # | Prelim | Midterm | Final |
 # ------------------------------------------------------------------------------------------
@@ -22,7 +23,7 @@ def make_subnb(parent):
     subnb = ttk.Notebook(parent)
     att = Frame(subnb)
     reci = Frame(subnb)
-    grp = Frame(subnb)
+    grp = Frame(subnb)  
     grd = Frame(subnb)
     summ = Frame(subnb)
 
@@ -33,26 +34,11 @@ def make_subnb(parent):
     subnb.add(summ, text="Summary")
     subnb.pack(expand=True, fill="both")
 
-    return {
-        "attendance": att,
-        "recitation": reci,
-        "groupings": grp,
-        "grades": grd,
-        "summary": summ
-        }
-
-def main():
-    w = Tk()
-    # SET WINDOW
-    set_window(w)
+    Label(att, text="Students").grid(row=0, column=0)
     
-    # SET MENU BAR
-    m = M.set_menubar(w)
-    M.set_classmenu(m)
-    M.set_editmenu(m)
-    M.set_settingmenu(m)
-     
-    # MAKE NOTEBOOK FOR TERMS
+
+    
+def make_nb(w):
     nb = ttk.Notebook(w)
     pre = Frame(nb)
     mid = Frame(nb)
@@ -66,13 +52,31 @@ def main():
     nb.pack(expand=True, fill="both")
     
     # MAKE SUBNOTEBOOK FOR TERMS
-    pre_frames = make_subnb(pre)
-    mid_frames = make_subnb(mid)
-    fin_frames = make_subnb(fin)
+    make_subnb(pre)
+    make_subnb(mid)
+    make_subnb(fin)
     
-    students = Label(pre_frames["attendance"], text="Students")
+
+def main():
+    w = Tk()
+    # SET WINDOW
+    set_window(w)
     
-    students.pack(side="left")
+    # SET MENU BAR
+    M.set_menubar(w)
+    
+    # MAKE NOTEBOOK FOR TERMS
+    make_nb(w)
+    
+    
+    with open("classes.json") as file:
+        classes = json.load(file)
+    
+    
+    
+    #for i, student in enumerate(students):
+    #    Label(pre_frames["attendance"], text="Students").grid(row=i, column=0)
+    
     
     
     

@@ -1,0 +1,32 @@
+[   
+    {
+        "student_id": "01240014125",
+        "first_name": "John Warren",
+        "middle_name": "Ducusin",
+        "last_name": "Manicane",
+        "program": "BSCS",
+        "year_level": "2nd year",
+        "sex": "male",
+        "status": "regular"   
+    },
+    {
+        "student_id": "01240014124",
+        "first_name": "John Kyle",
+        "middle_name": "Dikoalam",
+        "last_name": "Caampued",
+        "program": "BSCS",
+        "year_level": "2nd year",
+        "sex": "male",
+        "status": "regular"   
+    },
+    {
+        "student_id": "01240014126",
+        "first_name": "Jayvee",
+        "middle_name": "Dikoalam",
+        "last_name": "Marcelo",
+        "program": "BSCS",
+        "year_level": "2nd year",
+        "sex": "male",
+        "status": "regular"   
+    }
+]
