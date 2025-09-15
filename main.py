@@ -33,8 +33,34 @@ def make_subnb(parent):
     subnb.add(grd, text="Grades")
     subnb.add(summ, text="Summary")
     subnb.pack(expand=True, fill="both")
-
-    Label(att, text="Students").grid(row=0, column=0)
+    
+    students = Frame(att, borderwidth=1, relief="ridge")
+    students.grid(row=0, column=0)
+    Label(students, text="Students", padx=50).grid(row=0)
+    
+    week1 = Frame(att, borderwidth=1, relief="ridge")
+    week1.grid(row=0, column=1)
+    Label(week1, text="Week 1").grid(row=0)
+    
+    week2 = Frame(att, borderwidth=1, relief="ridge")
+    week2.grid(row=0, column=2)
+    Label(week2, text="Week 2").grid(row=0)
+    
+    week3 = Frame(att, borderwidth=1, relief="ridge")
+    week3.grid(row=0, column=3)
+    Label(week3, text="Week 3").grid(row=0)
+    
+    week4 = Frame(att, borderwidth=1, relief="ridge")
+    week4.grid(row=0, column=4)
+    Label(week4, text="Week 4").grid(row=0)
+    
+    week5 = Frame(att, borderwidth=1, relief="ridge")
+    week5.grid(row=0, column=5)
+    Label(week5, text="Week 5").grid(row=0)
+    
+    exam = Frame(att, borderwidth=1, relief="ridge")
+    exam.grid(row=0, column=6)
+    Label(exam, text="Exam").grid(row=0)
     
 
     

@@ -5,12 +5,12 @@ import json
 
 
 class Menubar:
-    def set_menubar(cls, w):
+    def set_menubar( w):
         m = Menu(w)
         w.config(menu=m)
-        cls.set_classmenu(m)
-        cls.set_editmenu(m)
-        cls.set_settingmenu(m)
+        Menubar.set_classmenu(m)
+        Menubar.set_editmenu(m)
+        Menubar.set_settingmenu(m)
 
     def open_class(class_name):
         print(f"{class_name} example")
@@ -23,9 +23,9 @@ class Menubar:
             classes = json.load(file)
 
         for class_ in sorted(classes, key=lambda x: x['section']):
-            classmenu.add_command(label=f"{class_['section']} | {class_['course']}",
-                                  command=lambda x=f"{class_['section']}_{class_['course']}":
-                                      )
+            classmenu.add_command(label=f"{class_['section']} | {class_['course']}")
+                                 # command=lambda x=f"{class_['section']}_{class_['course']}":
+                                      
     
     def set_editmenu(m): 
         editmenu = Menu(m, tearoff=0)

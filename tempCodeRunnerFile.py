@@ -1,0 +1,1 @@
+Label(att, text="Students", padx=50).grid(row=0, column=0)
